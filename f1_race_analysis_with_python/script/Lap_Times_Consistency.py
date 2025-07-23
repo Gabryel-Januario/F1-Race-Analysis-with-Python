@@ -1,14 +1,14 @@
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def lap_times_consistency(races, lap_times, drivers):
+from .utils.Import_Race_Id import import_race_id
 
-    Abu_Dhabi_GP_2021 = races[races['date'] == '2021-12-12'][['raceId', 'round']]
+def lap_times_consistency(lap_times, drivers):
+    race_id = import_race_id()
 
     lap_times['seconds'] = lap_times['milliseconds'] / 1000
-    lap_times_Abu_Dhabi_GP_2021 = lap_times[lap_times['raceId'] == Abu_Dhabi_GP_2021['raceId'].values[0]]
+    lap_times_Abu_Dhabi_GP_2021 = lap_times[lap_times['raceId'] == race_id]
 
     consistency_by_driver = lap_times_Abu_Dhabi_GP_2021.groupby('driverId')['seconds'].agg(['mean', 'std']).round(2).reset_index()
     consistency_by_driver = consistency_by_driver.sort_values(by='std')
@@ -27,4 +27,3 @@ def lap_times_consistency(races, lap_times, drivers):
     plt.ylabel('Standard Deviation (s)')
     plt.tight_layout()
     plt.show()
-
