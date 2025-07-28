@@ -1,5 +1,5 @@
 import pandas as pd 
-from ...config import RACES_CSV
+from ...config.constantes import RACES_CSV
 
 def import_race_id():
     races = pd.read_csv(RACES_CSV)

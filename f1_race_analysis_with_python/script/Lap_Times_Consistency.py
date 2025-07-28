@@ -4,7 +4,7 @@ import seaborn as sns
 
 from .utils.Import_Race_Id import import_race_id
 
-def lap_times_consistency(lap_times, drivers):
+def plot_lap_times_consistency(lap_times, drivers):
     race_id = import_race_id()
 
     lap_times['seconds'] = lap_times['milliseconds'] / 1000
@@ -19,11 +19,20 @@ def lap_times_consistency(lap_times, drivers):
 
     plt.figure(figsize=(12, 6))
 
-    sns.barplot(data=consistency_by_driver, x='driverRef', y='std', order=consistency_by_driver.sort_values('std')['driverRef'])
+    sns.barplot(
+                data=consistency_by_driver,
+                x='driverRef', 
+                y='std', 
+                order=consistency_by_driver.sort_values('std')['driverRef'], 
+                palette=sns.color_palette("RdYlGn_r", len(consistency_by_driver)), 
+                hue='driverRef',
+                legend=False
+                )
 
     plt.xticks(rotation=45, ha='right')
-    plt.title('Driver Consistency (Standard Deviation of Lap Times)')
-    plt.xlabel('Drivers')
-    plt.ylabel('Standard Deviation (s)')
+    plt.title('Driver Consistency (Standard Deviation of Lap Times)', fontsize=16)
+    plt.xlabel('Drivers', fontsize=14)
+    plt.ylabel('Standard Deviation (s)', fontsize=14)
     plt.tight_layout()
+    plt.grid(True, axis='y')
     plt.show()
