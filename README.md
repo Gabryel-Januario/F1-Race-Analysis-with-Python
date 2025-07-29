@@ -1,4 +1,4 @@
-# 🏁 F1 Race Analysis with Python
+# 🏁 F1 Race Analysis with Python 🏎️
 
 **2021 Abu Dhabi Grand Prix – Consistency & Strategy Study**
 
@@ -9,21 +9,29 @@ This project leverages real Formula 1 race data to perform an in-depth analysis 
 ## 📊 Project Highlights
 
 - 🚗 **Driver consistency**: per-lap standard deviation as a metric of pace stability
+  
+![Gráfico de desempenho](f1_race_analysis_with_python/images/Driver_Consistency.png)
+
 - 🏎️ **Position evolution**: track how driver positions changed throughout the race
+  
+![Gráfico de desempenho](f1_race_analysis_with_python/images/Positions_per_Driver.png)
+  
 - 🔧 **Pit stop strategy**: detection of undercuts and overcuts
+  
+![Gráfico de desempenho](f1_race_analysis_with_python/images/Number_of_Undercuts_and_Overcuts.png)
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone the repo
+#### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/f1-race-analysis.git
-cd f1-race-analysis
+git clone [https://github.com/your-username/f1-race-analysis.git](https://github.com/Gabryel-Januario/F1-Race-Analysis-with-Python)
+cd F1-Race-Analysi-with-Python
 ```
 
-### 2. (Optional) Create a virtual environment
+#### 2. (Optional) Create a virtual environment
 
 ```bash
 - python -m venv .venv
@@ -31,7 +39,7 @@ cd f1-race-analysis
 - .venv\\Scripts\\activate       #Windows
 ```
 
-### 3. Install dependencies
+#### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -41,7 +49,7 @@ pip install -r requirements.txt
 
 ## 🧪 Running the Analysis
 
-### 1. Open Jupyter:
+#### 1. Open Jupyter:
 
 ```bash
 jupyter notebook
@@ -49,7 +57,7 @@ jupyter notebook
 
 ### 2. Navigate to notebooks/f1_main_analysis.ipynb.
 
-### 3. Run all cells (Kernel > Restart & Run All).
+#### 3. Run all cells (Kernel > Restart & Run All).
 
 ---
 
