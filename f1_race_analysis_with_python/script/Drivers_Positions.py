@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 import numpy as np
 
-from ..config.constantes import lAP_TIMES_CSV, DRIVERS_CSV
+from ..config.constants import lAP_TIMES_CSV, DRIVERS_CSV
 from .utils.Import_Race_Id import import_race_id
 
 def plot_drivers_positions(drivers_code):
